@@ -39,40 +39,20 @@ let arrayTeam =
 //creare elemento card in Html
 
 
-
 const teamContainer = document.querySelector(".team-container");
-
-
 
 for (let i = 0; i < arrayTeam.length; i++) {
     let persona = arrayTeam[i];
     console.log(persona);
 
-    for (let key in persona) {
+    cicloForKey();
 
-    }
-    let card = ` <div class="team-card">
-                    <div class="card-image">
-                        <img src="${persona.image}" alt="Wayne Barnett" />
-                    </div>
-                    <div class="card-text">
-                        <h3>${persona.name}</h3>
-                        <p>${persona.role}</p>
-                    </div>
-                </div> `;
-
-    teamContainer.innerHTML += card;
+    cardPush();
 
     console.log(persona.name);
     console.log(persona.role);
     console.log(persona.image);
 }
-
-
-
-
-
-
 
 
 let newName = document.getElementById("name");
@@ -106,3 +86,30 @@ btnForm.addEventListener("click", function () {
 });
 
 //FINITO
+
+
+
+///////////////////////////////////////////////////
+//FUNZIONI
+//////////
+
+function cicloForKey() {
+    for (let key in persona) {
+
+    }
+}
+
+
+function cardPush() {
+    let card = ` <div class="team-card">
+                    <div class="card-image">
+                        <img src="${persona.image}" alt="Wayne Barnett" />
+                    </div>
+                    <div class="card-text">
+                        <h3>${persona.name}</h3>
+                        <p>${persona.role}</p>
+                    </div>
+                </div> `;
+
+    teamContainer.innerHTML += card;
+}
