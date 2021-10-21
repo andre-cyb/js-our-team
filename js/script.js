@@ -37,10 +37,6 @@ let arrayTeam =
     ];
 
 //creare elemento card in Html
-const teamContainer = document.querySelector(".team-container");
-let card = '<div class="team-card"><div class="card-image"><img src="img/wayne-barnett-founder-ceo.jpg" alt="Wayne Barnett" /></div><div class="card-text"><h3>Wayne Barnett</h3><p>Founder & CEO</p></div></div>';
-
-teamContainer.innerHTML += card;
 
 
 
@@ -48,12 +44,21 @@ teamContainer.innerHTML += card;
 
 
 for (let i = 0; i < arrayTeam.length; i++) {
-    let persone = arrayTeam[i];
-    console.log(persone);
+    let persona = arrayTeam[i];
+    console.log(persona);
 
+    for (let key in persona) {
 
-    for (let key in persone) {
-        console.log(key);
     }
+    const teamContainer = document.querySelector(".team-container");
+    let card = ` <div class="team-card"><div class="card-image"><img src="${persona.image}" alt="Wayne Barnett" /></div><div class="card-text"><h3>${persona.name}</h3><p>${persona.role}</p></div></div> `;
+
+    teamContainer.innerHTML += card;
+
+    console.log(persona.name);
+    console.log(persona.role);
+    console.log(persona.image);
 }
+
+
 
