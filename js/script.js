@@ -51,7 +51,15 @@ for (let i = 0; i < arrayTeam.length; i++) {
 
     }
     const teamContainer = document.querySelector(".team-container");
-    let card = ` <div class="team-card"><div class="card-image"><img src="${persona.image}" alt="Wayne Barnett" /></div><div class="card-text"><h3>${persona.name}</h3><p>${persona.role}</p></div></div> `;
+    let card = ` <div class="team-card">
+                    <div class="card-image">
+                        <img src="${persona.image}" alt="Wayne Barnett" />
+                    </div>
+                    <div class="card-text">
+                        <h3>${persona.name}</h3>
+                        <p>${persona.role}</p>
+                    </div>
+                </div> `;
 
     teamContainer.innerHTML += card;
 
@@ -62,3 +70,37 @@ for (let i = 0; i < arrayTeam.length; i++) {
 
 
 
+
+
+
+
+
+let newName = document.getElementById("name");
+let newRole = document.getElementById("role");
+let newImage = document.getElementById("image");
+
+/* comsole.log(newName.value); */
+
+const btnForm = document.getElementById("addMemberButton");
+
+btnForm.addEventListener("click", function () {
+
+    newName.value;
+    newRole.value;
+    newImage.value;
+    /* console.log(newName.value); */
+
+    let card = ` <div class="team-card">
+                    <div class="card-image">
+                        <img src="${newImage.value}" alt="Wayne Barnett" />
+                    </div>
+                    <div class="card-text">
+                        <h3>${newName.value}</h3>
+                        <p>${newRole.value}</p>
+                    </div>
+                </div> `;
+
+
+    teamContainer.innerHTML += card;
+
+});
