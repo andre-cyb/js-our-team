@@ -40,6 +40,7 @@ let arrayTeam =
 
 
 
+const teamContainer = document.querySelector(".team-container");
 
 
 
@@ -50,7 +51,6 @@ for (let i = 0; i < arrayTeam.length; i++) {
     for (let key in persona) {
 
     }
-    const teamContainer = document.querySelector(".team-container");
     let card = ` <div class="team-card">
                     <div class="card-image">
                         <img src="${persona.image}" alt="Wayne Barnett" />
@@ -104,3 +104,5 @@ btnForm.addEventListener("click", function () {
     teamContainer.innerHTML += card;
 
 });
+
+//FINITO
