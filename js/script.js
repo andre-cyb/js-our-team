@@ -39,20 +39,40 @@ let arrayTeam =
 //creare elemento card in Html
 
 
+
 const teamContainer = document.querySelector(".team-container");
+
+
 
 for (let i = 0; i < arrayTeam.length; i++) {
     let persona = arrayTeam[i];
     console.log(persona);
 
-    cicloForKey();
+    for (let key in persona) {
 
-    cardPush();
+    }
+    let card = ` <div class="team-card">
+                    <div class="card-image">
+                        <img src="${persona.image}" alt="Wayne Barnett" />
+                    </div>
+                    <div class="card-text">
+                        <h3>${persona.name}</h3>
+                        <p>${persona.role}</p>
+                    </div>
+                </div> `;
+
+    teamContainer.innerHTML += card;
 
     console.log(persona.name);
     console.log(persona.role);
     console.log(persona.image);
 }
+
+
+
+
+
+
 
 
 let newName = document.getElementById("name");
@@ -80,36 +100,11 @@ btnForm.addEventListener("click", function () {
                     </div>
                 </div> `;
 
+    let newCard = card;
+    teamContainer.innerHTML += newCard;
 
-    teamContainer.innerHTML += card;
+    arrayTeam.push({ name: `${newName.value}`, role: `${newRole.value}`, image: `${newImage.value}` });
 
+    console.log(arrayTeam);
 });
-
 //FINITO
-
-
-
-///////////////////////////////////////////////////
-//FUNZIONI
-//////////
-
-function cicloForKey() {
-    for (let key in persona) {
-
-    }
-}
-
-
-function cardPush() {
-    let card = ` <div class="team-card">
-                    <div class="card-image">
-                        <img src="${persona.image}" alt="Wayne Barnett" />
-                    </div>
-                    <div class="card-text">
-                        <h3>${persona.name}</h3>
-                        <p>${persona.role}</p>
-                    </div>
-                </div> `;
-
-    teamContainer.innerHTML += card;
-}
